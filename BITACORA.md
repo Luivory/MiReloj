@@ -38,6 +38,26 @@ Desarrollar una aplicación sencilla para practicar programación y aprender a o
 
 **Resultado:** entorno preparado para comenzar el desarrollo desde VS Code.
 
+### Sesión 1 — Planificación inicial del desarrollo web
+
+**Fecha:** 16/10/2026
+
+**Trabajo realizado:**
+- Revisión de la estructura inicial del repositorio en VS Code.
+- Comprobación de los archivos existentes: `README.md` y `BITACORA.md`.
+- Definición del objetivo inicial de la aplicación web MiReloj.
+- Planificación de las tecnologías que se utilizarán: HTML, CSS y JavaScript.
+- Organización de las primeras tareas de desarrollo.
+
+**Resultado:** entorno revisado y planificación inicial definida. Pendiente comenzar la implementación de la aplicación web.
+
+**Próximos pasos:**
+- Crear el archivo `index.html`.
+- Desarrollar la estructura básica de la página.
+- Implementar el reloj digital y mostrar la fecha.
+- Continuar con el desarrollo del cronómetro y el resto de las funcionalidades previstas.
+
+
 ## 5. Estimación inicial
 
 - **Duración prevista:** entre 5 y 8 horas de trabajo efectivo.
