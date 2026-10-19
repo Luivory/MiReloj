@@ -22,4 +22,28 @@ elementoHora.textContent = hora;
 console.log("Hora actualizada:", hora);
  }
  actualizarReloj();
-setInterval(actualizarReloj, 1000); 
+//setInterval(actualizarReloj, 1000); 
+
+function fechaActual(){
+
+    const hoy = new Date();
+    //const dia = hoy.getDate();
+    //const mes = hoy.getMonth() + 1; 
+    //const anio = hoy.getFullYear();
+
+    //return `${dia}/${mes}/${anio}`;
+return hoy.toLocaleDateString("es-ES",
+    {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    }
+);
+
+
+}
+console.log(fechaActual());
+
+const elementoFecha = document.getElementById("fecha");
+elementoFecha.textContent = fechaActual();  
