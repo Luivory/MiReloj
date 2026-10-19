@@ -87,6 +87,38 @@ Desarrollar una aplicación web sencilla para practicar programación y aprender
 - Desarrollar el cronómetro.
 - Continuar mejorando el diseño visual de la aplicación.
 
+### Sesión 3 — Fecha actual y desarrollo del cronómetro
+
+**Fecha:** 19/10/2026
+
+**Trabajo realizado:**
+- Creación de la función fechaActual() para obtener la fecha del sistema.
+- Uso de toLocaleDateString() con la configuración regional es-ES para mostrar el día de la semana, el día del mes, el mes y el año en español.
+- Manipulación del DOM mediante document.getElementById() y textContent para mostrar la fecha en la interfaz.
+- Organización del código JavaScript mediante comentarios para identificar las variables y las funciones principales.
+- Ampliación de la estructura HTML para incorporar una tarjeta de cronómetro debajo del reloj digital.
+- Creación del marcador id="cronometro" y de los botones para iniciar, pausar y reiniciar el contador.
+- Aplicación de estilos CSS a la tarjeta del cronómetro y a sus botones, manteniendo una apariencia coherente con el reloj digital.
+- Creación de variables para controlar el intervalo, el tiempo transcurrido y el instante de inicio del cronómetro.
+- Desarrollo de la función formatearTiempo() para convertir milisegundos en minutos, segundos y centésimas.
+- Uso de Math.floor(), el operador módulo % y padStart() para calcular y presentar el tiempo.
+- Desarrollo de la función actualizarCronometro() para calcular el tiempo transcurrido y actualizar el marcador.
+- Implementación de las funciones para iniciar, pausar y reiniciar el cronómetro.
+- Uso de setInterval() y clearInterval() para controlar la actualización y la pausa del contador.
+- Vinculación de los botones con sus respectivas funciones mediante addEventListener().
+- Realización de pruebas en el navegador y en la consola para comprobar el formato del tiempo y el avance del cronómetro.
+
+**Resultado:** fecha actual integrada en la interfaz y tarjeta del cronómetro incorporada debajo del reloj digital. Se han implementado las funciones principales para iniciar, pausar y reiniciar el contador, y se ha comprobado visualmente que el cronómetro avanza. Queda completar la comprobación de todas las acciones y reactivar la actualización automática del reloj digital, que permanece desactivada temporalmente durante las pruebas.
+
+**Próximos pasos:**
+- Comprobar el funcionamiento de los botones de iniciar, pausar, reanudar y reiniciar el cronómetro.
+- Retirar los mensajes de depuración que ya no sean necesarios.
+- Reactivar la actualización automática del reloj digital.
+- Continuar mejorando el diseño visual de la aplicación.
+- Registrar los cambios en Git y publicarlos en GitHub.
+- Desarrollar el reloj analógico y, posteriormente, el temporizador.
+
+
 ## 5. Estimación inicial
 
 - **Duración prevista:** entre 5 y 8 horas de trabajo efectivo.

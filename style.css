@@ -29,3 +29,42 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     
 }
+
+.cronometro-card {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 600px;
+    /* min-width: 200px; */
+    background-color: rgba(219, 232, 219, 0.66);
+    text-align: center;
+    color: rgb(83, 14, 76);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    margin: 5px auto;
+    border-radius: 10px 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    
+}
+
+#cronometro {
+    font-size: 32px;
+    font-weight: bold; 
+    color: blue;
+}
+
+.botones-cronometro {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;    
+}
+.botones-cronometro button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: rgb(83, 14, 76);
+    color: white;
+    transition: background-color 0.3s ease;
+}   
