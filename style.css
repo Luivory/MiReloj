@@ -1,17 +1,32 @@
+/* Colores base del tema Metálico premium */
+:root {
+    --fondo: #171821;
+    --tarjeta: #252635;
+    --violeta: #A78BFA;
+    --turquesa: #67DCC0;
+    --texto: #F4F2FA;
+    --metal-claro: #E8EAF2;
+    --metal-oscuro: #62677A;
+    --fuente-principal: var(--fuente-principal);
+    --borde-tarjeta: #414354;
+    --radio-tarjeta: 12px;
+    --sombra-tarjeta: 0 8px 24px rgba(0, 0, 0, 0.28) ;
+}
+
 #fecha {
-    color: rgb(144, 23, 23)
+    color: var(--violeta);
 }
 #hora {
-    color: blue
+    color: var(--violeta);
 }
 body {
-    background-color: rgb(133, 190, 133);
+    background-color: var(--fondo);
     font-size: 18px;
     padding: 90px;
     margin: 100px;
     text-align: center;
-    color: rgb(83, 14, 76);
-    font-family: Arial, Helvetica, sans-serif;
+    color: var(--violeta);
+    font-family: var(--fuente-principal);
 }
 
 .reloj-card {
@@ -19,37 +34,62 @@ body {
     width: 100%;
     max-width: 600px;
     /* min-width: 200px; */
-    background-color: rgba(219, 232, 219, 0.66);
+    background-color: var(--tarjeta);
     text-align: center;
-    color: rgb(83, 14, 76);
-    font-family: Arial, Helvetica, sans-serif;
+    color: var(--violeta);
+    font-family: var(--fuente-principal);
     padding: 10px;
     margin: 5px auto;
-    border-radius: 10px 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: var(--radio-tarjeta);
+    box-shadow: var(--sombra-tarjeta);
+    border: 1px solid var(--borde-tarjeta); 
+    transition: border-color 0.5s ease;
     
 }
+
+/* Estilo para el reloj analógico */
+
+.reloj-analogico-card{
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 600px;
+    /* min-width: 200px; */
+    background-color: var(--tarjeta);
+    text-align: center;
+    color: var(--violeta);
+    font-family: var(--fuente-principal);
+    padding: 10px;
+    margin: 5px auto;
+    border-radius: var(--radio-tarjeta);
+    box-shadow: var(--sombra-tarjeta);
+    border: 1px solid var(--borde-tarjeta);
+    transition: border-color 0.5s ease;
+}
+
+/* Estilo para el cronómetro */
 
 .cronometro-card {
     box-sizing: border-box;
     width: 100%;
     max-width: 600px;
     /* min-width: 200px; */
-    background-color: rgba(219, 232, 219, 0.66);
+    background-color: var(--tarjeta);
     text-align: center;
-    color: rgb(83, 14, 76);
+    color: var(--violeta);
     font-family: Arial, Helvetica, sans-serif;
     padding: 10px;
     margin: 5px auto;
-    border-radius: 10px 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: var(--radio-tarjeta);
+    box-shadow: var(--sombra-tarjeta);
+    border: 1px solid var(--borde-tarjeta);
+    transition: border-color 0.5s ease;
     
 }
 
 #cronometro {
     font-size: 32px;
     font-weight: bold; 
-    color: blue;
+    color: var(--violeta);
 }
 
 .botones-cronometro {
@@ -64,7 +104,129 @@ body {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    background-color: rgb(83, 14, 76);
-    color: white;
+    background-color: var(--violeta);
+    color: var(--texto);
     transition: background-color 0.3s ease;
 }   
+
+.botones-cronometro button:hover {
+    background-color: var(--turquesa);
+    color: var(--fondo);
+}
+
+/*Esfera del reloj analógico*/
+
+.reloj-analogico {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border: 6px solid var(--borde-tarjeta);
+    border-radius: 50%;
+    margin: 20px auto;
+    background: var(--tarjeta);
+}
+
+/*Colocar el 12 en la posición*/
+
+.marca-12{
+    position:absolute;
+    top: 10%;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+/*Colocar el 3 en la posición*/
+.marca-3{
+    position:absolute;
+    top:50%;
+    right:10%;
+    transform: translateY(-50%);
+}
+
+/*Colocar el 6 en la posición*/
+.marca-6{
+    position:absolute;
+    bottom:10%;
+    left:50%;
+    transform: translateX(-50%);
+}               
+
+/*Colocar el 9 en la posición*/
+.marca-9{
+    position:absolute;
+    top:50%;
+    left:10%;
+    transform: translateY(-50%);
+}
+
+/* Base común para posicionar las agujas */
+
+.aguja {
+    position: absolute;
+    bottom: 50%;
+    left:50%;
+    transform-origin: bottom center;
+}
+
+/*El tamaño de las agujas*/
+.aguja-horas {
+    width: 7px;
+    height: 60px;
+    background: linear-gradient( 
+        90deg,
+        var(--metal-oscuro),
+        var(--metal-claro), 
+        var(--violeta),
+        var(--metal-oscuro));
+
+    transform: translateX(-50%);
+}
+.aguja-minutos {
+    width: 5px;
+    height: 70px;
+    background: linear-gradient( 
+        90deg,
+        var(--metal-oscuro),
+        var(--metal-claro), 
+        var(--turquesa),
+        var(--metal-oscuro));
+
+    transform: translateX(-50%);
+}
+
+.aguja-segundos {
+    width: 3.5px;
+    height: 85px;
+
+background: linear-gradient(
+    90deg,
+    var(--metal-oscuro),
+    var(--violeta),
+    var(--metal-claro),
+    var(--metal-oscuro)
+);
+    transform: translateX(-50%);
+}
+
+/* Estilo para el centro del reloj analógico */
+
+.centro-reloj {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    background-color: var(--metal-claro);
+    border: 2px solid var(--metal-oscuro);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+h1{
+    color: var(--violeta);
+}
+
+.reloj-card:hover,
+.reloj-analogico-card:hover,
+.cronometro-card:hover{
+    border-color: var(--violeta);
+}

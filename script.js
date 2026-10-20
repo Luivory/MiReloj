@@ -1,27 +1,46 @@
 console.log("¡Mi Reloj está funcionando!");
 
 function actualizarReloj(){
-const ahora = new Date();
+    const ahora = new Date();
 
 
-const horas = ahora.getHours();
-const minutos = ahora.getMinutes();
-const segundos = ahora.getSeconds();    
+    const horas = ahora.getHours();
+    const minutos = ahora.getMinutes();
+    const segundos = ahora.getSeconds();    
 
-const horasTexto = horas.toString().padStart(2, "0");
-const minutosTexto =minutos.toString().padStart(2, "0");
-const segundosTexto = segundos.toString().padStart(2, "0");
+    const horasTexto = horas.toString().padStart(2, "0");
+    const minutosTexto =minutos.toString().padStart(2, "0");
+    const segundosTexto = segundos.toString().padStart(2, "0");
 
-const hora = `${horasTexto}:${minutosTexto}:${segundosTexto}`;
+    const hora = `${horasTexto}:${minutosTexto}:${segundosTexto}`;
 
-const elementoHora = document.getElementById("hora");
+    // Obtenemos los elementos del reloj y movemos la aguja de los segundos.
+    const elementoHora = document.getElementById("hora");
+        elementoHora.textContent = hora;
 
-elementoHora.textContent = hora;
+    const agujaSegundos = document.getElementById("agujaSegundos");
+    const anguloSegundos = segundos * 6; //angulo de rotación para la aguja de los segundos (360 grados / 60 segundos = 6 grados por segundo)
 
+        if (agujaSegundos) {
+         agujaSegundos.style.transform = `translateX(-50%) rotate(${anguloSegundos}deg)`;
+        }
+    
+    const agujaMinutos = document.getElementById("agujaMinutos");
+    const anguloMinutos = minutos * 6 + segundos * 0.1; //angulo de rotación para la aguja de los minutos (360 grados / 60 minutos = 6 grados por minuto, y 0.1 grados por segundo) 
 
+    if (agujaMinutos) {
+        agujaMinutos.style.transform = `translateX(-50%) rotate(${anguloMinutos}deg)`;
+    }
+
+    const agujaHoras = document.getElementById ("agujaHoras");
+    const anguloHoras = (horas % 12) * 30 + minutos * 0.5; //angulo de rotación para la aguja de los horas (360/12 horas = 30 grados por hora)
+
+	if (agujaHoras) {
+	agujaHoras.style.transform = `translateX(-50%) rotate(${anguloHoras}deg)`; 	}
  }
+
  actualizarReloj();
-//setInterval(actualizarReloj, 1000); 
+ setInterval(actualizarReloj, 1000); 
 
 function fechaActual(){
 
@@ -128,10 +147,7 @@ botonIniciar.addEventListener("click", iniciarCronometro);
 botonPausar.addEventListener("click", pausarCronometro);
 botonReiniciar.addEventListener("click", reiniciarCronometro);
 
+  
 
 
 
-console.log(formatearTiempo(0));
-console.log(formatearTiempo(1000));
-console.log(formatearTiempo(75480));  
-console.log(botonReiniciar);    
